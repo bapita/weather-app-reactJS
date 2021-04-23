@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+body {
+    background: #f3f2ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Jost', sans-serif;
+}
+
+html {
+    font-size: 100%;
+    height: 100%;
+}
+
+
+.info {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+    z-index: 4;
+}
+
+.box {
+    width: 25vw;
+    height: 60vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.3rem 3rem rgba(0,0,0,0.2);
+    background: #a5bbdd;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    min-width: 20rem;
+    min-height: 35rem;
+}
+
+input{
+    border-radius: 15px 50px;
+    margin-top: 20px;
+    margin-left: 15px;
+    padding: 10px; 
+    width: 300px;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    border: none;
+}
+input:focus { 
+    border: none;
+    outline: none;
+}
+
+.noData {
+    margin-top: 20px;
+    margin-left: 65px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.wave {
+    opacity: 0.3;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    background: white;
+    width: 50rem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -20rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: 1;
+}
+
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+.wave.-three{
+    animation: drift 5000ms infinite linear;
+    z-index: 2 !important;
+    opacity: 0.2;
+}
+
+.wave.-two{
+    animation: drift 7000ms infinite linear;
+    z-index: 3 !important;
+    opacity: 0.1;
+}
+
+.box:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0,0,0);
+}
+
+.location {
+    margin-top: -5.5rem;
+    text-align: center;
+}
+
+.temp {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.tempmin_max {
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #57606f;
+}
+
+.info {
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: antiquewhite;
+}
+
+.info .fas {
+    font-size: 3rem;
+    color: crimson;
+    animation: fas-anime 3s linear infinite alternate;
+}
+
+
+
+@keyframes fas-anime {
+    from {
+        transform: scale(1.0);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 90vw;
+        height: 80vh;
+    }
+
+    .wave {
+        top: 85%;
+    }
+
+    #weathercon {
+        font-size: 5em;
+    }
+
+    .info {
+        font-size: 1.5rem;
+    }
+}
