@@ -7,7 +7,7 @@ const TempApp = () => {
 
     useEffect(() => {
         const fetchApi = async () => { // returning promise. 
-            const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=b14425a6554d189a2d7dc18a8e7d7263`;
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=dbe7ec7fd358d632555d8a6d51fb087d`;
             const response = await fetch(url); // either pass or fail --> as promise
             //console.log(response);
             const responsejson = await response.json(); 
